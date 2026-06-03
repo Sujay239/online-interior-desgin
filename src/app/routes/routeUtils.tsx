@@ -1,9 +1,9 @@
-import { Suspense } from "react";
 import { PageLoader } from "@/components/shared/PageLoader";
+import { ClientOnly } from "@/components/shared/ClientOnly";
 
 // Helper to wrap lazy components in Suspense
 export const SuspenseWrapper = (Component: React.ComponentType) => (
-  <Suspense fallback={<PageLoader />}>
+  <ClientOnly fallback={<PageLoader />}>
     <Component />
-  </Suspense>
+  </ClientOnly>
 );

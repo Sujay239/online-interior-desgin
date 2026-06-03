@@ -1,10 +1,11 @@
-import { useState, useEffect, lazy, Suspense } from "react";
+import { useState, useEffect, lazy } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { portfolioService } from "@/services/portfolioService";
 import type { PortfolioCategory } from "@/types/portfolio";
 import { PortfolioCategoryHero } from "./PortfolioCategory/PortfolioCategoryHero";
 const PortfolioProjectShowcase = lazy(() => import("./PortfolioCategory/PortfolioProjectShowcase").then(m => ({ default: m.PortfolioProjectShowcase })));
 import { SectionLoader } from "@/components/shared/SectionLoader";
+import { ClientOnly } from "@/components/shared/ClientOnly";
 
 /**
  * PortfolioCategoryPage — Reads :categorySlug from the URL,
@@ -64,13 +65,13 @@ export default function PortfolioCategoryPage() {
 
         {/* Project Showcases */}
         {category.projects.map((project, index) => (
-          <Suspense key={project.id} fallback={<SectionLoader height="h-[600px]" />}>
+          <ClientOnly key={project.id} fallback={<SectionLoader height="h-[600px]" />}>
             <PortfolioProjectShowcase
               project={project}
               index={index}
               reversed={index % 2 !== 0}
             />
-          </Suspense>
+          </ClientOnly>
         ))}
       </div>
     </>

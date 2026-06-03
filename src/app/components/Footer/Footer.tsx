@@ -62,7 +62,7 @@ export function Footer() {
           {/* DESKTOP: Grid View */}
           {Object.values(footerLinks).map((section) => (
             <div key={section.title} className="hidden md:block">
-              <h4 className="font-bold text-sm tracking-wider mb-6 text-foreground uppercase">{section.title}</h4>
+              <h3 className="font-bold text-sm tracking-wider mb-6 text-foreground uppercase">{section.title}</h3>
               <ul className="space-y-3">
                 {section.links.map((link) => (
                   <li key={link.title}>
@@ -77,7 +77,7 @@ export function Footer() {
 
           {/* 4. Newsletter & Socials */}
           <div className="lg:pl-8">
-            <h4 className="font-bold text-sm tracking-wider mb-4 text-foreground uppercase">GET EXCLUSIVE TIPS & OFFERS</h4>
+            <h3 className="font-bold text-sm tracking-wider mb-4 text-foreground uppercase">GET EXCLUSIVE TIPS & OFFERS</h3>
             <div className="flex gap-2 mb-10">
               <Input
                 placeholder="Enter email address"
@@ -88,7 +88,7 @@ export function Footer() {
               />
             </div>
 
-            <h4 className="font-bold text-sm tracking-wider mb-4 text-foreground uppercase">JOIN OUR COMMUNITY</h4>
+            <h3 className="font-bold text-sm tracking-wider mb-4 text-foreground uppercase">JOIN OUR COMMUNITY</h3>
             <div className="flex gap-6">
               <a href="#" aria-label="Follow us on Instagram" className="text-muted-foreground hover:text-foreground transition-colors"><Instagram className="w-5 h-5" /></a>
               <a href="#" aria-label="Follow us on Facebook" className="text-muted-foreground hover:text-foreground transition-colors"><Facebook className="w-5 h-5" /></a>

@@ -24,6 +24,8 @@ export function PortfolioCategoryHero({
         <img
           src={heroImage}
           alt={`${name} Interior Design Portfolio`}
+          width={2000}
+          height={1333}
           className="w-full h-full object-cover brightness-[0.55]"
           loading="eager"
           fetchPriority="high"
@@ -33,7 +35,7 @@ export function PortfolioCategoryHero({
 
       {/* Content Overlay */}
       <div className="relative z-10 container mx-auto h-full flex flex-col justify-center items-center text-white text-center px-4">
-        <div className="max-w-4xl space-y-6 animate-fade-in-up flex flex-col items-center">
+        <div className="max-w-4xl space-y-6 flex flex-col items-center">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-sm text-white/70">
             <Link to="/portfolio" className="hover:text-gold transition-colors">

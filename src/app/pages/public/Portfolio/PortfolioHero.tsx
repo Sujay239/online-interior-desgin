@@ -33,7 +33,7 @@ export function PortfolioHero() {
 
       {/* 2. CONTENT OVERLAY */}
       <div className="relative z-10 container mx-auto h-full flex flex-col justify-center items-center text-white text-center px-4">
-        <div className="max-w-5xl space-y-8 animate-fade-in-up flex flex-col items-center">
+        <div className="max-w-5xl space-y-8 flex flex-col items-center">
 
           {/* Title */}
           <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-normal leading-tight tracking-tight drop-shadow-lg">

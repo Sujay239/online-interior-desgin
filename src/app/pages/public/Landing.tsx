@@ -1,6 +1,7 @@
-import { lazy, Suspense } from "react";
+import { lazy } from "react";
 import { HeroSection } from "./Landing/HeroSection";
 import { SectionLoader } from "@/components/shared/SectionLoader";
+import { ClientOnly } from "@/components/shared/ClientOnly";
 
 // Lazy load below-the-fold sections
 const ProcessSection = lazy(() =>
@@ -58,37 +59,37 @@ export default function Landing() {
         {/* Hero is Eager Loaded to preserve LCP */}
         <HeroSection />
 
-        <Suspense fallback={<SectionLoader height="h-[600px]" />}>
+        <ClientOnly fallback={<SectionLoader height="h-[600px]" />}>
           <ProcessSection />
-        </Suspense>
+        </ClientOnly>
 
-        <Suspense fallback={<SectionLoader height="h-[800px]" />}>
+        <ClientOnly fallback={<SectionLoader height="h-[800px]" />}>
           <TestimonialsSection />
-        </Suspense>
+        </ClientOnly>
 
-        <Suspense fallback={<SectionLoader height="h-[800px]" />}>
+        <ClientOnly fallback={<SectionLoader height="h-[800px]" />}>
           <ProjectShowcaseSection />
-        </Suspense>
+        </ClientOnly>
 
-        <Suspense fallback={<SectionLoader height="h-[400px]" />}>
+        <ClientOnly fallback={<SectionLoader height="h-[400px]" />}>
           <VendorSavingsSection />
-        </Suspense>
+        </ClientOnly>
 
-        <Suspense fallback={<SectionLoader height="h-[800px]" />}>
+        <ClientOnly fallback={<SectionLoader height="h-[800px]" />}>
           <RealSpacesSection />
-        </Suspense>
+        </ClientOnly>
 
-        <Suspense fallback={<SectionLoader height="h-[600px]" />}>
+        <ClientOnly fallback={<SectionLoader height="h-[600px]" />}>
           <BenefitsSection />
-        </Suspense>
+        </ClientOnly>
 
-        <Suspense fallback={<SectionLoader height="h-[400px]" />}>
+        <ClientOnly fallback={<SectionLoader height="h-[400px]" />}>
           <ConsultationCTA />
-        </Suspense>
+        </ClientOnly>
 
-        <Suspense fallback={<SectionLoader height="h-[300px]" />}>
+        <ClientOnly fallback={<SectionLoader height="h-[300px]" />}>
           <FeaturedSection />
-        </Suspense>
+        </ClientOnly>
       </div>
     </>
   );

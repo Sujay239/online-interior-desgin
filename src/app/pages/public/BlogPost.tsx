@@ -57,6 +57,8 @@ export default function BlogPost() {
             <BlurImage 
               src={post.featuredImage}
               alt={post.title}
+              width={2000}
+              height={1333}
               // CRITICAL LCP OPTIMIZATIONS:
               loading="eager"
               decoding="sync"
@@ -67,7 +69,7 @@ export default function BlogPost() {
           </div>
 
           <div className="relative z-10 container mx-auto h-full flex flex-col justify-center items-center text-white text-center px-4">
-            <div className="max-w-4xl space-y-6 animate-fade-in-up flex flex-col items-center mt-16">
+            <div className="max-w-4xl space-y-6 flex flex-col items-center mt-16">
               <Badge variant="outline" className="mb-2 text-gold border-gold/50 tracking-wide px-4 py-1.5 bg-black/20 backdrop-blur-sm shadow-sm">
                 {post.category.name}
               </Badge>

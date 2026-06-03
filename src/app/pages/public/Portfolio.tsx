@@ -1,6 +1,7 @@
-import { lazy, Suspense } from "react";
+import { lazy } from "react";
 import { HowItWorksHero } from "./HowItWorks/HowItWorksHero";
 import { SectionLoader } from "@/components/shared/SectionLoader";
+import { ClientOnly } from "@/components/shared/ClientOnly";
 
 // Lazy load below-the-fold sections
 const HowItWorksTabs = lazy(() => import("./HowItWorks/HowItWorksTabs").then(module => ({ default: module.HowItWorksTabs })));
@@ -16,30 +17,30 @@ const Portfolio = () => {
         {/* Hero is Eager Loaded to preserve LCP */}
         <HowItWorksHero />
 
-        <Suspense fallback={<SectionLoader height="h-[800px]" />}>
+        <ClientOnly fallback={<SectionLoader height="h-[800px]" />}>
           <HowItWorksTabs />
-        </Suspense>
+        </ClientOnly>
 
-        <Suspense fallback={<SectionLoader height="h-[600px]" />}>
+        <ClientOnly fallback={<SectionLoader height="h-[600px]" />}>
           <HowItWorksProjectDetails 
             title="Black and White Living Room Design"
             designer="Renata P."
             imageSrc="/images/unsplash/1540518614846-7eded433c457.webp"
           />
-        </Suspense>
+        </ClientOnly>
 
-        <Suspense fallback={<SectionLoader height="h-[800px]" />}>
+        <ClientOnly fallback={<SectionLoader height="h-[800px]" />}>
           <HowItWorksGallery />
-        </Suspense>
+        </ClientOnly>
 
-        <Suspense fallback={<SectionLoader height="h-[600px]" />}>
+        <ClientOnly fallback={<SectionLoader height="h-[600px]" />}>
           <HowItWorksProjectDetails 
             title="Modern Living Room Dining Room Combo"
             designer="Meric S."
             imageSrc="/images/unsplash/1600210492486-724fe5c67fb0.webp"
             reversed={true}
           />
-        </Suspense>
+        </ClientOnly>
 
         {/* CTA is provided by parent PortfolioLayout */}
       </div>

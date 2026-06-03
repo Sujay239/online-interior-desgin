@@ -1,8 +1,9 @@
-import { useState, useCallback, lazy, Suspense } from "react";
+import { useState, useCallback, lazy } from "react";
 import { quizSteps, type QuizSelection } from "@/services/quizData";
 import { StyleQuizForm } from "./StyleQuiz/StyleQuizForm";
 const EmailCaptureDialog = lazy(() => import("./StyleQuiz/EmailCaptureDialog").then(m => ({ default: m.EmailCaptureDialog })));
 import { useNavigate } from "react-router-dom";
+import { ClientOnly } from "@/components/shared/ClientOnly";
 
 const TOTAL_STEPS = quizSteps.length;
 
@@ -106,14 +107,14 @@ export default function StyleQuizStart() {
         />
 
         {/* Email Capture Modal */}
-        <Suspense fallback={null}>
+        <ClientOnly fallback={null}>
           <EmailCaptureDialog
             isOpen={showEmailModal}
             onSubmit={handleEmailSubmit}
             onSocialLogin={handleSocialLogin}
             onSkip={handleSkipEmail}
           />
-        </Suspense>
+        </ClientOnly>
       </div>
     </>
   );
