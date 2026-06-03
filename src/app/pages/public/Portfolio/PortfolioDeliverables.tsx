@@ -1,5 +1,5 @@
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { BlurImage } from "@/components/shared/BlurImage";
 
 const deliverables = [
@@ -41,14 +41,14 @@ export function PortfolioDeliverables() {
       <div className="container mx-auto px-4">
         
         {/* Section Title */}
-        <motion.div 
+        <m.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
           <h2 className="font-serif text-4xl md:text-5xl text-foreground">You'll Receive</h2>
-        </motion.div>
+        </m.div>
 
         {/* Deliverables Carousel */}
         <div className="relative px-8 md:px-12 lg:px-0">
@@ -62,7 +62,7 @@ export function PortfolioDeliverables() {
             <CarouselContent className="-ml-4">
               {deliverables.map((item, index) => (
                 <CarouselItem key={index} className="pl-4 basis-full md:basis-1/2 lg:basis-1/5">
-                  <motion.div
+                  <m.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -83,7 +83,7 @@ export function PortfolioDeliverables() {
                     <h3 className="font-serif text-xl leading-tight text-foreground/90 max-w-[200px] mx-auto">
                       {item.title}
                     </h3>
-                  </motion.div>
+                  </m.div>
                 </CarouselItem>
               ))}
             </CarouselContent>

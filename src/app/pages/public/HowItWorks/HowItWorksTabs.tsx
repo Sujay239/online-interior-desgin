@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Quote } from "lucide-react";
 
@@ -83,7 +83,7 @@ export function HowItWorksTabs() {
         </Tabs>
 
         {/* Testimonial */}
-        <motion.div 
+        <m.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -96,7 +96,7 @@ export function HowItWorksTabs() {
             <p className="font-bold text-sm tracking-widest uppercase text-gold">
                 - {projectData.testimonial.author}
             </p>
-        </motion.div>
+        </m.div>
 
       </div>
     </section>
@@ -114,7 +114,7 @@ function ImageGallery({ images }: { images: { src: string, alt: string }[] }) {
             <div className="w-full aspect-video md:aspect-16/8 relative rounded-lg overflow-hidden shadow-2xl">
                  {images.map((img, index) => (
                      <TabsContent key={index} value={index.toString()} className="w-full h-full mt-0 absolute inset-0">
-                         <motion.img 
+                         <m.img 
                             initial={{ opacity: 0, scale: 1.05 }}
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0 }}

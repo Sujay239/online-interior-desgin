@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import {
   Accordion,
   AccordionContent,
@@ -35,7 +35,7 @@ export function PortfolioFAQ() {
       <div className="container mx-auto px-4 max-w-4xl">
         
         {/* Header */}
-        <motion.div 
+        <m.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -44,13 +44,13 @@ export function PortfolioFAQ() {
           <h2 className="font-serif text-3xl md:text-5xl text-foreground font-light">
             Frequently Asked Questions
           </h2>
-        </motion.div>
+        </m.div>
 
         {/* Accordion */}
         <div className="space-y-4">
             <Accordion type="single" collapsible className="w-full space-y-4">
               {faqs.map((faq, index) => (
-                <motion.div
+                <m.div
                   key={index}
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -68,7 +68,7 @@ export function PortfolioFAQ() {
                       {faq.answer}
                     </AccordionContent>
                   </AccordionItem>
-                </motion.div>
+                </m.div>
               ))}
             </Accordion>
         </div>

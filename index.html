@@ -12,10 +12,15 @@
     />
   <meta name="theme-color" content="#FFFFFF" />
   <!-- Preload critical fonts for FCP -->
+  <link rel="preload" href="/fonts/lato-300-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/lato-400-normal.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/fonts/playfair-display-400-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/lato-700-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/playfair-display-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/playfair-display-400-italic.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/playfair-display-700-normal.woff2" as="font" type="font/woff2" crossorigin />
+  
+  <!-- Preload Hero Image for LCP Discovery -->
+  <link rel="preload" as="image" href="/images/unsplash/1618221195710-dd6b41faaea6.webp" imagesrcset="/images/unsplash/1618221195710-dd6b41faaea6.webp 800w, /images/unsplash/1618221195710-dd6b41faaea6.webp 1200w, /images/unsplash/1618221195710-dd6b41faaea6.webp 2000w" imagesizes="100vw" fetchpriority="high" />
 </head>
 <body>
   <div id="root"></div>

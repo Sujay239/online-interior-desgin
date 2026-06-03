@@ -1,10 +1,8 @@
 import { Outlet } from "react-router-dom";
-import { lazy } from "react";
+
 import { Navbar } from "@/app/components/Navbar/Navbar";
-// Lazy load footer since it's below the fold
-const Footer = lazy(() => import("@/app/components/Footer/Footer").then(m => ({ default: m.Footer })));
+import { Footer } from "@/app/components/Footer/Footer";
 import { ScrollToTop } from "@/components/shared/ScrollToTop";
-import { ClientOnly } from "@/components/shared/ClientOnly";
 
 export function MainLayout() {
   return (
@@ -22,9 +20,7 @@ export function MainLayout() {
       </main>
 
       {/* Global Footer */}
-      <ClientOnly fallback={<div className="h-40 bg-muted/20 animate-pulse w-full"></div>}>
-        <Footer />
-      </ClientOnly>
+      <Footer />
     </div>
   );
 }
