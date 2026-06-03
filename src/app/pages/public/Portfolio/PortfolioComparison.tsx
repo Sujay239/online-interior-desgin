@@ -1,4 +1,4 @@
-import { m } from "framer-motion";
+import { motion } from "framer-motion";
 import { Check, X } from "lucide-react";
 import { Logo } from "@/components/shared/Logo";
 
@@ -58,7 +58,7 @@ export function PortfolioComparison() {
       <div className="container mx-auto px-4">
         
         {/* Header */}
-        <m.div 
+        <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -67,7 +67,7 @@ export function PortfolioComparison() {
           <h2 className="font-serif text-3xl md:text-5xl text-foreground">
             Decorilla vs Traditional Interior Design
           </h2>
-        </m.div>
+        </motion.div>
 
         {/* Comparison Table */}
         <div className="max-w-4xl mx-auto bg-card rounded-2xl shadow-xl overflow-hidden border border-border">
@@ -84,7 +84,7 @@ export function PortfolioComparison() {
             {/* Rows */}
             <div className="divide-y divide-border">
                 {comparisonData.map((row, index) => (
-                    <m.div 
+                    <motion.div 
                         key={index}
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -118,7 +118,7 @@ export function PortfolioComparison() {
                                 )
                             )}
                         </div>
-                    </m.div>
+                    </motion.div>
                 ))}
             </div>
         </div>

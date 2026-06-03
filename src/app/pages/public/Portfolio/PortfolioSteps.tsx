@@ -1,4 +1,4 @@
-import { m } from "framer-motion";
+import { motion } from "framer-motion";
 import { MessageSquare } from "lucide-react";
 import { BlurImage } from "@/components/shared/BlurImage";
 
@@ -10,7 +10,7 @@ export function PortfolioSteps() {
         {/* --- STEP 1: QUESTIONNAIRE --- */}
         <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
           {/* Image */}
-          <m.div 
+          <motion.div 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -23,9 +23,9 @@ export function PortfolioSteps() {
                 ratio={4/3}
                 containerClassName="rounded-2xl shadow-2xl"
              />
-          </m.div>
+          </motion.div>
           {/* Content */}
-          <m.div 
+          <motion.div 
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -39,13 +39,13 @@ export function PortfolioSteps() {
             <p className="text-lg text-muted-foreground leading-relaxed">
               To start your design project you'll complete a quick and easy questionnaire, let us know your preferences, attach photos of your room, and choose the inspiration you love.
             </p>
-          </m.div>
+          </motion.div>
         </div>
 
         {/* --- STEP 2: PROPOSALS (Centerpiece) --- */}
         <div className="space-y-12">
           {/* Header */}
-          <m.div 
+          <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -58,7 +58,7 @@ export function PortfolioSteps() {
             <p className="text-lg text-muted-foreground leading-relaxed">
               Get multiple design concepts based on your assessment and budget. Choose your favorite professional designer to help translate your vision.
             </p>
-          </m.div>
+          </motion.div>
 
           {/* Visual Composition */}
           <div className="relative w-full max-w-5xl mx-auto h-[500px] md:h-[600px] flex justify-center items-center mt-12 pb-12">
@@ -66,7 +66,7 @@ export function PortfolioSteps() {
             {/* Background Container */}
             <div className="absolute top-0 w-full flex justify-between px-2 md:px-0 items-start opacity-50 md:opacity-100">
                {/* Designer 2 (Left Back) */}
-               <m.div 
+               <motion.div 
                  initial={{ opacity: 0, x: -50 }}
                  whileInView={{ opacity: 1, x: 0 }}
                  viewport={{ once: true }}
@@ -86,10 +86,10 @@ export function PortfolioSteps() {
                     </div>
                     <span className="text-xs font-semibold text-gray-600">Designer #2</span>
                   </div>
-               </m.div>
+               </motion.div>
 
                {/* Designer 3 (Right Back - Context) */}
-               <m.div 
+               <motion.div 
                  initial={{ opacity: 0, x: 50 }}
                  whileInView={{ opacity: 1, x: 0 }}
                  viewport={{ once: true }}
@@ -103,11 +103,11 @@ export function PortfolioSteps() {
                         ratio={4/3}
                       />
                   </div>
-               </m.div>
+               </motion.div>
             </div>
 
             {/* Foreground Card (Designer 1 - Winner) */}
-            <m.div 
+            <motion.div 
               initial={{ opacity: 0, y: 100, scale: 0.9 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
@@ -139,7 +139,7 @@ export function PortfolioSteps() {
                    <span>(5)</span>
                  </div>
               </div>
-            </m.div>
+            </motion.div>
 
           </div>
         </div>
@@ -147,7 +147,7 @@ export function PortfolioSteps() {
         {/* --- STEP 3: WORK CLOSELY --- */}
         <div className="flex flex-col md:flex-row-reverse items-center gap-12 md:gap-20">
           {/* Visual (Right) */}
-          <m.div 
+          <motion.div 
              initial={{ opacity: 0, x: 50 }}
              whileInView={{ opacity: 1, x: 0 }}
              viewport={{ once: true, margin: "-100px" }}
@@ -160,10 +160,10 @@ export function PortfolioSteps() {
                 ratio={4/3}
                 containerClassName="rounded-2xl shadow-2xl"
              />
-          </m.div>
+          </motion.div>
           
           {/* Content (Left) */}
-          <m.div 
+          <motion.div 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -177,7 +177,7 @@ export function PortfolioSteps() {
             <p className="text-lg text-muted-foreground leading-relaxed">
               Your designer will work with you to bring your design to life, using the perfect combination of new and existing pieces. With the help of AI interior design tools, they'll review and refine your custom-made 3D model, floor plan, color palette, and shopping list with you every step of the way.
             </p>
-          </m.div>
+          </motion.div>
         </div>
 
       </div>

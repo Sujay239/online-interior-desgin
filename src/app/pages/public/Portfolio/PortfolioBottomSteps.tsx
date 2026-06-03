@@ -1,4 +1,4 @@
-import { m } from "framer-motion";
+import { motion } from "framer-motion";
 import { BlurImage } from "@/components/shared/BlurImage";
 
 export function PortfolioBottomSteps() {
@@ -9,7 +9,7 @@ export function PortfolioBottomSteps() {
         {/* --- STEP 4: ORDER AND TRACK --- */}
         <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
           {/* Image (Left) - Laptop Mockup */}
-          <m.div 
+          <motion.div 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -26,10 +26,10 @@ export function PortfolioBottomSteps() {
                     containerClassName="rounded-2xl shadow-2xl"
                  />
              </div>
-          </m.div>
+          </motion.div>
           
           {/* Content (Right) */}
-          <m.div 
+          <motion.div 
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -43,13 +43,13 @@ export function PortfolioBottomSteps() {
             <p className="text-lg text-muted-foreground leading-relaxed">
               You'll have the flexibility to buy the items on your own timeline as needed. Our white-glove shopping concierge service never expires and ensures that you'll get the best price possible with our exclusive discounts saving you $1000s.
             </p>
-          </m.div>
+          </motion.div>
         </div>
 
         {/* --- STEP 5: DREAM ROOM (Centered) --- */}
         <div className="space-y-12">
           {/* Header */}
-          <m.div 
+          <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -59,10 +59,10 @@ export function PortfolioBottomSteps() {
               <span className="flex items-center justify-center w-12 h-12 rounded-full bg-gold text-white font-serif text-2xl font-bold shadow-lg shrink-0">5</span>
               <h3 className="font-serif text-3xl md:text-4xl uppercase tracking-wide">Enjoy Your Dream Room Design!</h3>
             </div>
-          </m.div>
+          </motion.div>
 
           {/* Large Hero Image */}
-          <m.div 
+          <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -75,7 +75,7 @@ export function PortfolioBottomSteps() {
                 ratio={16/9}
                 containerClassName="rounded-3xl shadow-2xl"
             />
-          </m.div>
+          </motion.div>
         </div>
 
       </div>

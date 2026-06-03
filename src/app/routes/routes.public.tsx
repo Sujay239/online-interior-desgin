@@ -5,8 +5,12 @@ import { SuspenseWrapper } from "./routeUtils";
 import { BlogLayout } from "@/app/layouts/BlogLayout";
 import { PortfolioLayout } from "@/app/layouts/PortfolioLayout";
 
-// Lazy Load Pages
-const LandingPage = lazy(() => import("@/app/pages/public/Landing"));
+// Eagerly load Landing — it's the entry point, always needed, and only ~5 KiB.
+// Lazy-loading it caused a route-level Suspense boundary that triggered a 0.414 CLS
+// (PageLoader at 50vh → full page content at ~5000px = massive footer jump).
+import Landing from "@/app/pages/public/Landing";
+
+// Lazy Load Secondary Pages
 const PortfolioPage = lazy(() => import("@/app/pages/public/Portfolio"));
 const PortfolioCategoryPage = lazy(() => import("@/app/pages/public/PortfolioCategoryPage"));
 const HowItWorksPage = lazy(() => import("@/app/pages/public/HowItWorksPage"));
@@ -25,7 +29,7 @@ export const publicRoutes: RouteObject[] = [
     children: [
       {
         index: true,
-        element: SuspenseWrapper(LandingPage),
+        element: <Landing />,
       },
       {
         path: "portfolio",

@@ -1,4 +1,4 @@
-import { m } from "framer-motion";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -6,7 +6,7 @@ export function CTASection() {
   return (
     <section className="py-24 bg-background">
       <div className="container mx-auto px-4 text-center">
-        <m.div
+        <motion.div
            initial={{ opacity: 0, y: 20 }}
            whileInView={{ opacity: 1, y: 0 }}
            viewport={{ once: true }}
@@ -25,7 +25,7 @@ export function CTASection() {
               Let's Get Started
             </Button>
           </Link>
-        </m.div>
+        </motion.div>
       </div>
     </section>
   );

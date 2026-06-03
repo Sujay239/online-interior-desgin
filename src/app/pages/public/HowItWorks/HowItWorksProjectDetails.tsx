@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { m } from "framer-motion";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 interface ProjectDetailsProps {
@@ -33,7 +33,7 @@ export function HowItWorksProjectDetails({
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           
           {/* Image Column */}
-          <m.div 
+          <motion.div 
             initial={{ opacity: 0, x: reversed ? 50 : -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -49,10 +49,10 @@ export function HowItWorksProjectDetails({
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               loading="lazy"
             />
-          </m.div>
+          </motion.div>
 
           {/* Details Column */}
-          <m.div 
+          <motion.div 
             initial={{ opacity: 0, x: reversed ? -50 : 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -103,7 +103,7 @@ export function HowItWorksProjectDetails({
               </p>
             </div>
 
-          </m.div>
+          </motion.div>
 
         </div>
       </div>
