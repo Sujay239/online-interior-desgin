@@ -27,7 +27,7 @@ const categories = [
 const categoryImages = {
   "LIVING ROOM": [
     "/images/unsplash/1618221195710-dd6b41faaea6.webp",
-    "https://images.unsplash.com/photo-1616486338812-3dadae4b4f9d?auto=format&fit=crop&q=80&w=1200",
+    "/images/unsplash/1618221195710-dd6b41faaea6.webp",
     "/images/unsplash/1616137466211-f939a420be84.webp",
     "https://images.unsplash.com/photo-1616047006789-b7af5afb4c2e?auto=format&fit=crop&q=80&w=1200",
     "/images/unsplash/1567016432779-094069958ea5.webp"

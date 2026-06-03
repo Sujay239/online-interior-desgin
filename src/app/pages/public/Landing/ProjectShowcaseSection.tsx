@@ -9,7 +9,7 @@ const projects = [
     id: 1,
     title: "Modern Coastal Living Room and Bedroom Makeover",
     beforeImage: "/images/unsplash/1586023492125-27b2c045efd7.webp",
-    afterImage: "https://images.unsplash.com/photo-1616486338812-3dadae4b4f9d?q=80&w=1200&auto=format&fit=crop",
+    afterImage: "/images/unsplash/1618221195710-dd6b41faaea6.webp",
     challenge: "We would like a more minimal look with Feng Shui and natural elements that highlight our beautiful green view.",
     result: "We got the relaxing dream home we always wanted. Wanda was fun to work with and paid attention to every single detail.",
     author: "Kris",

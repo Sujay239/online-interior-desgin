@@ -98,7 +98,7 @@ export function PortfolioSteps() {
                >
                    <div className="relative bg-gray-50 rounded overflow-hidden">
                       <BlurImage 
-                        src="https://images.unsplash.com/photo-1616486338812-3dadae4b4f9d?q=80&w=800&auto=format&fit=crop"
+                        src="/images/unsplash/1618221195710-dd6b41faaea6.webp"
                         alt="Living Area Plan"
                         ratio={4/3}
                       />

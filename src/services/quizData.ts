@@ -119,7 +119,7 @@ export const quizSteps: QuizStep[] = [
     },
     optionB: {
       id: "6b",
-      imageUrl: "/images/unsplash/1616486338812-3dadae4b4f9d.webp",
+      imageUrl: "/images/unsplash/1618221195710-dd6b41faaea6.webp",
       alt: "Elegant transitional living room blending classic and modern",
       styleLabel: "Transitional",
     },
