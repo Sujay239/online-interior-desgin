@@ -1,4 +1,4 @@
-import { useState, useEffect, Suspense } from "react";
+import { Suspense } from "react";
 import type { ReactNode } from "react";
 
 interface ClientOnlyProps {
@@ -7,21 +7,11 @@ interface ClientOnlyProps {
 }
 
 /**
- * ClientOnly safely renders lazy-loaded components on the client-side only.
- * This prevents SSR hydration mismatches (React Error #419) by rendering
- * the fallback placeholder on the server, and the actual component (wrapped in Suspense)
- * once the client mounts.
+ * Lightweight Suspense wrapper for lazy-loaded components.
+ * Since this app is pure CSR (no SSR), we don't need to delay rendering
+ * until after mount. A simple Suspense boundary is sufficient and avoids
+ * the extra render frame that was causing massive CLS (0.414) on the footer.
  */
 export function ClientOnly({ children, fallback = null }: ClientOnlyProps) {
-  const [hasMounted, setHasMounted] = useState(false);
-
-  useEffect(() => {
-    setHasMounted(true);
-  }, []);
-
-  if (!hasMounted) {
-    return <>{fallback}</>;
-  }
-
   return <Suspense fallback={fallback}>{children}</Suspense>;
 }

@@ -152,6 +152,28 @@
   }
 }
 
+/* ── Performance: CSS Containment to reduce forced reflows ── */
+
+/* Isolate the navbar so Radix UI's internal layout measurements
+   (NavigationMenu, Sheet) don't trigger full-page reflows */
+nav.sticky {
+  contain: layout style;
+}
+
+/* Isolate the footer so its layout calculations are independent */
+footer {
+  contain: layout style;
+}
+
+/* Skip rendering of off-screen lazy sections entirely.
+   The browser won't compute layout/paint for these until
+   they're about to scroll into view. */
+main > div > section,
+main > div > div {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
+
 @font-face {
   font-family: 'Lato';
   font-style: normal;
