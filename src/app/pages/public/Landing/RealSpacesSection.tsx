@@ -111,6 +111,8 @@ const categoryImages = {
   ]
 };
 
+const slugify = (text: string) => text.toLowerCase().replace(/[\s/]+/g, '-');
+
 export function RealSpacesSection() {
   // We need distinct state/apis for each tabs content if we want to preserve state, 
   // but simpler is to rely on Shadcn Tabs to unmount/mount content or just have one API that updates.
@@ -145,12 +147,12 @@ export function RealSpacesSection() {
         </h2>
 
         {/* Categories / Tabs */}
-        <Tabs defaultValue="LIVING ROOM" className="w-full mb-12">
+        <Tabs defaultValue={slugify(categories[0])} className="w-full mb-12">
           <TabsList variant="line" className="bg-transparent flex flex-nowrap overflow-x-auto justify-start md:justify-center gap-x-8 mb-12 border-b-0 w-screen relative left-1/2 right-1/2 -ml-[50vw] h-auto no-scrollbar scroll-smooth px-4 md:px-12">
             {categories.map((category) => (
               <TabsTrigger
                 key={category}
-                value={category}
+                value={slugify(category)}
                 className="rounded-none border-b-2 border-transparent data-[state=active]:border-gold data-[state=active]:text-gold-dark data-[state=active]:bg-transparent! data-[state=active]:shadow-none! text-muted-foreground/70 font-bold tracking-[0.15em] text-xs uppercase bg-transparent shadow-none hover:text-gold-dark transition-all px-1 pb-1 shrink-0"
               >
                 {category}
@@ -163,7 +165,7 @@ export function RealSpacesSection() {
             const images = categoryImages[category as keyof typeof categoryImages] || categoryImages["LIVING ROOM"];
 
             return (
-              <TabsContent key={category} value={category} className="mt-0 w-full">
+              <TabsContent key={category} value={slugify(category)} className="mt-0 w-full">
                 {/* Full Width Carousel Container */}
                 <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw]">
                   <Carousel
@@ -197,17 +199,21 @@ export function RealSpacesSection() {
                 </div>
 
                 {/* Dots */}
-                <div className="flex justify-center gap-2 mt-8">
+                <div className="flex justify-center mt-4">
                   {Array.from({ length: count }).map((_, index) => (
                     <button
                       key={index}
                       onClick={() => api?.scrollTo(index)}
-                      className={cn(
-                        "w-2 h-2 rounded-full transition-all duration-300",
-                        current === index ? "bg-foreground scale-125" : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
-                      )}
+                      className="w-12 h-12 flex items-center justify-center group"
                       aria-label={`Go to slide ${index + 1}`}
-                    />
+                    >
+                      <span
+                        className={cn(
+                          "w-2 h-2 rounded-full transition-all duration-300",
+                          current === index ? "bg-foreground scale-125" : "bg-muted-foreground/30 group-hover:bg-muted-foreground/50"
+                        )}
+                      />
+                    </button>
                   ))}
                 </div>
 

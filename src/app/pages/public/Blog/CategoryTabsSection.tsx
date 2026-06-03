@@ -19,6 +19,8 @@ const categories = [
   "Kitchen & Bath"
 ];
 
+const slugify = (text: string) => text.toLowerCase().replace(/[\s/&]+/g, '-');
+
 export function CategoryTabsSection() {
   const [posts, setPosts] = React.useState<BlogPost[]>([]);
   const [isLoading, setIsLoading] = React.useState(true);
@@ -75,12 +77,12 @@ export function CategoryTabsSection() {
         </h2>
 
         {/* Categories / Tabs */}
-        <Tabs defaultValue="Full Home" className="w-full mb-12">
+        <Tabs defaultValue={slugify(categories[0])} className="w-full mb-12">
           <TabsList variant="line" className="bg-transparent flex flex-nowrap overflow-x-auto justify-start md:justify-center gap-x-8 mb-12 border-b-0 w-screen relative left-1/2 right-1/2 -ml-[50vw] h-auto no-scrollbar scroll-smooth px-4 md:px-12">
             {categories.map((category) => (
               <TabsTrigger
                 key={category}
-                value={category}
+                value={slugify(category)}
                 className="rounded-none border-b-2 border-transparent data-[state=active]:border-gold data-[state=active]:text-gold-dark data-[state=active]:bg-transparent! data-[state=active]:shadow-none! text-muted-foreground/70 font-bold tracking-[0.15em] text-xs uppercase bg-transparent shadow-none hover:text-gold-dark transition-all px-1 pb-1 shrink-0"
               >
                 {category}
@@ -100,7 +102,7 @@ export function CategoryTabsSection() {
             if (filteredPosts.length === 0) return null;
 
             return (
-              <TabsContent key={category} value={category} className="mt-0 w-full">
+              <TabsContent key={category} value={slugify(category)} className="mt-0 w-full">
                 {/* Full Width Carousel Container */}
                 <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] text-left">
                   <Carousel
